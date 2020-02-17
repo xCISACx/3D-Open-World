@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2f47b40e4f6a5574e9488ae118da2031
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TimeText: {instanceID: 0}
+  - SunMoon: {instanceID: 0}
+  - SunMoonPrefab: {fileID: 1786420096687351453, guid: 2b4ed41b617c0b04c8fd54f9f71e3f4a,
+      type: 3}
+  - Sun: {instanceID: 0}
+  - Moon: {instanceID: 0}
+  - Map: {instanceID: 0}
+  - MainCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
