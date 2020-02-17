@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class DayNightCycle : MonoBehaviour {
     
     public static DayNightCycle Instance;
-    public float TimeScale = 0.2f;            // Game Day ratio to Real Day
-    public TimeSpan GameTime = new TimeSpan(); // Current adjusted game time
+    public float TimeScale = 0.2f;  // Game Day ratio to Real Day
+    public Vector4 StartTimeVector;
+    [SerializeField] public TimeSpan StartTime;
+    public TimeSpan GameTime; // Current adjust1ed game time
     private float gameSeconds = 0;             // Accumulated 'Game Time' in seconds
     public Text TimeText;
     public GameObject SunMoon;
@@ -40,18 +42,19 @@ public class DayNightCycle : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("aaaaaaaaaaaaaaa");
+        StartTime = new TimeSpan((int)StartTimeVector.x, (int)StartTimeVector.y, (int)StartTimeVector.z, (int)StartTimeVector.w);
     }
 
     public void Update() 
     {                    
         gameSeconds += Time.deltaTime * TimeScale;
-        GameTime = TimeSpan.FromSeconds(gameSeconds); // Convert to a usable format
+        GameTime = StartTime + TimeSpan.FromSeconds(gameSeconds); // Convert to a usable format
         TimeText.text = ToString();
         //Debug.Log("Current Game Time: " + ToString());
 
         if (SunMoon)
         {
+            //TODO: FIX LIGHTING BUG BY APPLYING AN OFFSET TO THE ROTATION SO IT'S NOT EXACTLY 90 DEGREES
             SunMoon.transform.RotateAround(Map.transform.position, Vector3.forward, 360f/86400f * TimeScale * Time.deltaTime);
             
             //SunMoon.transform.GetChild(0).LookAt(Vector3.forward);
