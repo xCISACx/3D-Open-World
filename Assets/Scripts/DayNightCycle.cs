@@ -66,7 +66,7 @@ public class DayNightCycle : MonoBehaviour {
         }
         
         float normalisedTime = ((float)GameTime.TotalSeconds % 86400) / 86400f;
-        Debug.Log(normalisedTime);
+        //Debug.Log(normalisedTime);
         float lerpTime = ColourCurve.Evaluate(normalisedTime);
         //MainCamera.backgroundColor = Color.Lerp(NightColour, DayColour, lerpTime);
         MainCamera.backgroundColor = gradient.Evaluate(lerpTime);

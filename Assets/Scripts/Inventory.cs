@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -39,8 +40,6 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         Player = FindObjectOfType<PlayerBehaviour>();
-        SlotHolder.transform.GetChild(0).GetChild(0).GetComponent<Button>().Select();
-        //Debug.Log(SlotHolder.transform.GetChild(0).GetChild(0).name);
     }
 
     // Update is called once per frame
