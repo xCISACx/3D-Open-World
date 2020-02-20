@@ -5,7 +5,6 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Input;
 
 public class InventorySlot : MonoBehaviour
 {
